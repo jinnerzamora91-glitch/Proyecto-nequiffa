@@ -1,0 +1,7 @@
+com\nequiffa\model\CuentaBancaria.class
+com\nequiffa\model\CuentaNequi.class
+com\nequiffa\model\BancoPopular.class
+com\nequiffa\model\BancoBogota.class
+com\nequiffa\app\NequiApp.class
+com\nequiffa\service\TransferenciaService.class
+com\nequiffa\util\FacturaService.class
