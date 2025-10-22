@@ -17,21 +17,9 @@ public abstract class CuentaBancaria {
         this.saldo = saldoInicial;
     }
 
-    public String getIdCuenta() {
-        return idCuenta;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
+    public String getIdCuenta() { return idCuenta; }
+    public String getNombreUsuario() { return nombreUsuario; }
+    public double getSaldo() { return saldo; }
 
     public void depositar(double monto) {
         saldo += monto;

@@ -4,25 +4,20 @@
  */
 package com.nequiffa.model;
 
-/**
- * CuentaNequi mantiene referencia a una CuentaBancaria externa
- * y lleva el acumulado de comisiones. El método retirar aplica 1% de comision.
- */
 public class CuentaNequi extends CuentaBancaria {
     private double totalComisiones;
-    private CuentaBancaria cuentaExterna;
+    private CuentaBancaria cuentaExterna; // 🔹 Agregación (Nequi tiene una cuenta bancaria externa)
 
     public CuentaNequi(String idCuenta, String nombreUsuario, String contraseña, double saldoInicial, CuentaBancaria cuentaExterna) {
         super(idCuenta, nombreUsuario, contraseña, saldoInicial);
-        this.totalComisiones = 0;
         this.cuentaExterna = cuentaExterna;
+        this.totalComisiones = 0;
     }
 
     @Override
     public double retirar(double monto) {
-        double comision = monto * 0.01; // 1% de comisión
+        double comision = monto * 0.01;
         double total = monto + comision;
-
         if (saldo >= total) {
             saldo -= total;
             totalComisiones += comision;
@@ -34,15 +29,7 @@ public class CuentaNequi extends CuentaBancaria {
         }
     }
 
-    public double getTotalComisiones() {
-        return totalComisiones;
-    }
-
-    public void setTotalComisiones(double totalComisiones) {
-        this.totalComisiones = totalComisiones;
-    }
-
-    public CuentaBancaria getCuentaExterna() {
-        return cuentaExterna;
-    }
+    public CuentaBancaria getCuentaExterna() { return cuentaExterna; }
+    public double getTotalComisiones() { return totalComisiones; }
+    public void setTotalComisiones(double totalComisiones) { this.totalComisiones = totalComisiones; }
 }

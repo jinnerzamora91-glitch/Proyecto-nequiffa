@@ -5,15 +5,9 @@
 package com.nequiffa.service;
 
 import com.nequiffa.model.CuentaBancaria;
-import com.nequiffa.model.CuentaNequi;
-
-/**
- * Servicio de transferencia: transfiere desde CuentaNequi hacia CuentaBancaria externa.
- * Devuelve la comisión aplicada (0 si no se pudo hacer la transferencia).
- */
-import com.nequiffa.model.CuentaBancaria;
 
 public class TransferenciaService {
+    // Relación de asociación: usa cuentas, pero no las posee
     public boolean transferir(CuentaBancaria origen, CuentaBancaria destino, double monto) {
         if (origen.getSaldo() >= monto) {
             origen.retirar(monto);
@@ -21,7 +15,7 @@ public class TransferenciaService {
             System.out.println("✅ Transferencia exitosa.");
             return true;
         } else {
-            System.out.println("❌ Fondos insuficientes para transferir.");
+            System.out.println("❌ Fondos insuficientes.");
             return false;
         }
     }
